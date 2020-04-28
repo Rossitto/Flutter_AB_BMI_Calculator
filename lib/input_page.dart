@@ -7,6 +7,7 @@ const bottomContainerHeight = 80.0;
 const activeCardColour = Color(0xFF1D1E33);
 const inactiveCardColour = Color(0xFF111328);
 const bottomContainerColour = Color(0xFFEB1555);
+enum Gender { male, female }
 
 class InputPage extends StatefulWidget {
   @override
@@ -16,6 +17,27 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Color maleCardColour = inactiveCardColour;
   Color femaleCardColour = inactiveCardColour;
+
+  void updateColour(Gender gender) {
+    //male card pressed
+    if (gender == Gender.male) {
+      if (maleCardColour == inactiveCardColour) {
+        maleCardColour = activeCardColour;
+        femaleCardColour = inactiveCardColour;
+      } else {
+        maleCardColour = inactiveCardColour;
+      }
+    }
+    //female card pressed
+    if (gender == Gender.female) {
+      if (femaleCardColour == inactiveCardColour) {
+        maleCardColour = inactiveCardColour;
+        femaleCardColour = activeCardColour;
+      } else {
+        femaleCardColour = inactiveCardColour;
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +55,7 @@ class _InputPageState extends State<InputPage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          maleCardColour = activeCardColour;
-                          femaleCardColour = inactiveCardColour;
+                          updateColour(Gender.male);
                         });
                       },
                       child: ReusableCard(
@@ -50,8 +71,7 @@ class _InputPageState extends State<InputPage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          femaleCardColour = activeCardColour;
-                          maleCardColour = inactiveCardColour;
+                          updateColour(Gender.female);
                         });
                       },
                       child: ReusableCard(
