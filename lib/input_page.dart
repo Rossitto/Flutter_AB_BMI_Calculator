@@ -62,6 +62,7 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
+            // Slider "HEIGHT"
             Expanded(
               child: ReusableCard(
                 colour: kActiveCardColour,
@@ -71,6 +72,12 @@ class _InputPageState extends State<InputPage> {
                       'HEIGHT',
                       style: kLabelTextStyle,
                     ),
+                    Row(children: <Widget>[
+                      Text(
+                        '180',
+                        style: kSelectorTextStyle,
+                      ),
+                    ]),
                   ],
                 ),
               ),
