@@ -12,7 +12,7 @@ class BMICalculator extends StatelessWidget {
         sliderTheme: SliderTheme.of(context).copyWith(
           thumbColor: kBottomContainerColour,
           activeTrackColor: Colors.white,
-          inactiveTrackColor: Colors.grey,
+          inactiveTrackColor: kInactiveSliderColour,
           overlayColor: Color(0x29EB1555),
           thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
           overlayShape: RoundSliderOverlayShape(overlayRadius: 25.0),
