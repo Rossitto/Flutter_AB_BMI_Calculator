@@ -5,6 +5,7 @@ const kActiveCardColour = Color(0xFF1D1E33);
 const kInactiveCardColour = Color(0xFF111328);
 const kInactiveSliderColour = Color(0xFF8D8E98);
 const kBottomContainerColour = Color(0xFFEB1555);
+const kRoundIconButtonColour = Color(0xFF4C4F5E);
 
 const kLabelTextStyle = TextStyle(
   fontSize: 18.0,
