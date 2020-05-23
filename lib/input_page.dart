@@ -209,7 +209,7 @@ class _InputPageState extends State<InputPage> {
                 width: double.infinity,
                 height: kBottomContainerHeight,
               ),
-            )
+            ),
           ],
         ),
       ),
