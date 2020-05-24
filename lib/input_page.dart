@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_card.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
+import 'bottom_button.dart';
+import 'round_icon_button.dart';
 
 enum Gender { male, female }
 
@@ -193,47 +195,15 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            GestureDetector(
+            BottomButton(
+              buttonText: 'CALCULATE',
               onTap: () {
                 Navigator.pushNamed(context, '/result');
               },
-              child: Container(
-                padding: EdgeInsets.only(bottom: 20.0),
-                child: Center(
-                  child: Text(
-                    'CALCULATE',
-                    style: kLargeButtonTextStyle,
-                  ),
-                ),
-                color: kBottomContainerColour,
-                width: double.infinity,
-                height: kBottomContainerHeight,
-              ),
             ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({@required this.icon, @required this.onPressed()});
-  final IconData icon;
-  final Function onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      onPressed: onPressed,
-      elevation: 6.0,
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      shape: CircleBorder(),
-      fillColor: kRoundIconButtonColour,
     );
   }
 }
